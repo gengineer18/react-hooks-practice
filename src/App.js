@@ -1,28 +1,21 @@
-import React from 'react';
+import React, {createContext, useState} from 'react';
 import './App.css';
-// import Counter from './component/Counter'
-// import CounterHook from './component/CounterHook'
-// import FormHook from './component/FormHook'
-// import { ItemHook } from './component/ItemHook'
-// import ClassEffect from './component/ClassEffect'
-// import { EffectHook } from './component/EffectHook'
-// import { MouseEventEffect } from './component/MouseEventEffect'
-// import { DataFetch } from './component/DataFetch'
-import { DataFetchById } from './component/DataFetchById'
+import { ComponentC } from './component/ComponentC';
 
+export const userContext = createContext()
+export const languageContext = createContext()
 
 function App() {
+  const [user, setUser] = useState({ name: 'yamada', age: 32 })
+  const [language, setLanguage] = useState('日本語')
+
   return (
     <div className="App">
-      {/* <Counter /> */}
-      {/* <CounterHook /> */}
-      {/* <FormHook /> */}
-      {/* <ItemHook /> */}
-      {/* <ClassEffect /> */}
-      {/* <EffectHook /> */}
-      {/* <MouseEventEffect /> */}
-      {/* <DataFetch /> */}
-      <DataFetchById />
+      <userContext.Provider value={user}>
+        <languageContext.Provider value={language}>
+          <ComponentC />
+        </languageContext.Provider>
+      </userContext.Provider>
     </div>
   );
 }
