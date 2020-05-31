@@ -5,7 +5,8 @@ import './App.css';
 // import FormHook from './component/FormHook'
 // import { ItemHook } from './component/ItemHook'
 // import ClassEffect from './component/ClassEffect'
-import { EffectHook } from './component/EffectHook'
+// import { EffectHook } from './component/EffectHook'
+import { MouseEventEffect } from './component/MouseEventEffect'
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       {/* <FormHook /> */}
       {/* <ItemHook /> */}
       {/* <ClassEffect /> */}
-      <EffectHook />
+      {/* <EffectHook /> */}
+      <MouseEventEffect />
     </div>
   );
 }
