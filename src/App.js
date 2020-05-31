@@ -4,7 +4,8 @@ import './App.css';
 // import CounterHook from './component/CounterHook'
 // import FormHook from './component/FormHook'
 // import { ItemHook } from './component/ItemHook'
-import ClassEffect from './component/ClassEffect'
+// import ClassEffect from './component/ClassEffect'
+import { EffectHook } from './component/EffectHook'
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       {/* <CounterHook /> */}
       {/* <FormHook /> */}
       {/* <ItemHook /> */}
-      <ClassEffect />
+      {/* <ClassEffect /> */}
+      <EffectHook />
     </div>
   );
 }
