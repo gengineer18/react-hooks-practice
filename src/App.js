@@ -3,7 +3,13 @@ import './App.css';
 // import Counter from './component/Counter'
 // import CounterHook from './component/CounterHook'
 // import FormHook from './component/FormHook'
-import { ItemHook } from './component/ItemHook'
+// import { ItemHook } from './component/ItemHook'
+// import ClassEffect from './component/ClassEffect'
+// import { EffectHook } from './component/EffectHook'
+// import { MouseEventEffect } from './component/MouseEventEffect'
+// import { DataFetch } from './component/DataFetch'
+import { DataFetchById } from './component/DataFetchById'
+
 
 function App() {
   return (
@@ -11,7 +17,12 @@ function App() {
       {/* <Counter /> */}
       {/* <CounterHook /> */}
       {/* <FormHook /> */}
-      <ItemHook />
+      {/* <ItemHook /> */}
+      {/* <ClassEffect /> */}
+      {/* <EffectHook /> */}
+      {/* <MouseEventEffect /> */}
+      {/* <DataFetch /> */}
+      <DataFetchById />
     </div>
   );
 }
