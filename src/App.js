@@ -1,39 +1,50 @@
-import React, { createContext, useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import './App.css';
-import { ComponentA } from './component/ComponentA';
-import { ComponentB } from './component/ComponentB';
-import { ComponentC } from './component/ComponentC';
-
-export const CountContext = createContext()
+import axios from 'axios'
 
 const initialState = {
-  firstCounter: 0
+  loading: true,
+  error: '',
+  post: {}
 }
+
 const reducer = (state, action) => {
-  switch(action.type) {
-    case 'increment1':
-      return { ...state, firstCounter: state.firstCounter + action.value }
-    case 'decrement1':
-      return { ...state, firstCounter: state.firstCounter - action.value }
-    case 'reset':
-      return initialState
+  switch (action.type) {
+    case 'FETCH_SUCCESS':
+      return {
+        loading: false,
+        post: action.payload,
+        error: ''
+      }
+    case 'FETCH_ERROR':
+      return {
+        loading: false,
+        post: {},
+        error: 'データの取得に失敗しました'
+      }
     default:
       return state
   }
 }
 
 function App() {
-  const [count, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  useEffect(() => {
+    axios
+      .get('https://jsonplaceholder.typicode.com/posts/1')
+      .then(res => {
+        dispatch({type: 'FETCH_SUCCESS', payload: res.data})
+      })
+      .catch(res => {
+        dispatch({ type: 'FETCH_ERROR'})
+      })
+  })
+
   return (
     <div className="App">
-      <h1>カウント：{count.firstCounter}</h1>
-      <CountContext.Provider
-        value={{countState: count, countDispatch: dispatch}}
-      >
-        <ComponentA />
-        <ComponentB />
-        <ComponentC />
-      </CountContext.Provider>
+      <h1>{state.loading ? 'Loading...' : state.post.title}</h1>
+      <h2>{state.error ? state.error : null}</h2>
     </div>
   );
 }
