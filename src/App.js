@@ -1,21 +1,12 @@
-import React, {createContext, useState} from 'react';
+import React from 'react';
 import './App.css';
-import { ComponentC } from './component/ComponentC';
+import { CounterReducer } from './component/CounterReducer';
 
-export const userContext = createContext()
-export const languageContext = createContext()
 
 function App() {
-  const [user, setUser] = useState({ name: 'yamada', age: 32 })
-  const [language, setLanguage] = useState('日本語')
-
   return (
     <div className="App">
-      <userContext.Provider value={user}>
-        <languageContext.Provider value={language}>
-          <ComponentC />
-        </languageContext.Provider>
-      </userContext.Provider>
+      <CounterReducer />
     </div>
   );
 }
