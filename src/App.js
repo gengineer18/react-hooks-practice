@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import { WrapComponent } from './component/WrapComponent';
+import { Check } from './component/Check';
 
 function App() {
   return (
     <div className="App">
-      <WrapComponent />
+      <Check />
     </div>
   );
 }
