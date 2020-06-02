@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import { Check } from './component/Check';
+import { CountWithRef } from './component/CountWithRef';
+
 
 function App() {
   return (
     <div className="App">
-      <Check />
+      <h1>useRef</h1>
+      <CountWithRef />
     </div>
   );
 }
