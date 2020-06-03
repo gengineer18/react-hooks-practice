@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-import { CountWithRef } from './component/CountWithRef';
+import { DocTitleUpdateOne } from './component/DocTitleUpdateOne';
+import { DocTitleUpdateTwo } from './component/DocTitleUpdateTwo';
 
 
 function App() {
   return (
     <div className="App">
-      <h1>useRef</h1>
-      <CountWithRef />
+      <h1>CustomHook</h1>
+      <DocTitleUpdateOne />
+      <DocTitleUpdateTwo />
     </div>
   );
 }
