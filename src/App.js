@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
-import { DocTitleUpdateOne } from './component/DocTitleUpdateOne';
-import { DocTitleUpdateTwo } from './component/DocTitleUpdateTwo';
-
+import { Form } from './component/Form';
 
 function App() {
   return (
     <div className="App">
       <h1>CustomHook</h1>
-      <DocTitleUpdateOne />
-      <DocTitleUpdateTwo />
+      <Form />
     </div>
   );
 }
